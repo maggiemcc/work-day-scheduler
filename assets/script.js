@@ -1,6 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the Elements
 // in the html.
+var theDate = $('#currentDay');
 
 // VARIABLES FOR GETTING HOUR DIVS
 var hour9El = $("#hour-9");
@@ -43,5 +44,11 @@ $(function () {
   // the values of the corresponding textarea Elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
+
+
+  // COMPLETE: Display the current date in the header of the page.
+  $(function displayDate() {
+    var currentDay = dayjs().format("dddd: MMM DD, YYYY");
+    theDate.text(currentDay);
+  });
 });
