@@ -63,12 +63,29 @@ $(function planner() {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
-  $('.time-block').on('click', function(e) {
-    var selectedHour = $(this);
-    $(selectedHour).addClass('testing');
-    e.preventDefault();
+  // time block selection
+  $('.time-block').on('click', function selectHour (event) {
+    event.preventDefault();
 
-});
+    var chosenTime = $(this);
+    $(chosenTime).addClass('testing');
+    console.log("selected Hour:", chosenTime)
+  });
+
+// save button selection
+  $('.saveBtn').on('click', function saveInfo (event) {
+    event.preventDefault();
+
+    var saveInfo = $(this);
+    // select textarea value next to selected save button
+    var userText = $(this).prev('textarea').val();
+
+    // css for testing
+    $(saveInfo).addClass('testing');
+    $(userText).addClass('test');
+    console.log("selected Save:", saveInfo)
+    console.log("userText:", userText)
+  });
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea Elements. HINT: How can the id

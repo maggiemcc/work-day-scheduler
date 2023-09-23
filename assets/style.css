@@ -69,3 +69,7 @@ textarea {
 .testing {
   border: 2px solid black;
 }
+
+.test {
+  border: 5px solid orange;
+}
