@@ -12,20 +12,20 @@ $(function () {
   var hour17El = $("#hour-17");
 
 
-  // Display the current date in the header of the page.
   var theDate = $("#currentDay");
 
-  function displayDate() {
+  // DISPLAY CURRENT DATE IN HEADER
+  function displayCurrentDate() {
     var currentDay = dayjs().format("dddd: MMMM DD, YYYY");
     theDate.text(currentDay);
   }
 
-  // Add code to apply the past, present, or future class to each time
-  function currentTime() {
+  // APPLY PAST, PRESENT, or FUTURE CLASS TO TIME BLOCKS
+  function getCurrentTime() {
     var currentTime = dayjs().hour();
 
-    $(".time-block").each(function colorTime() {
-      let timeDiv = $(this).attr("data-value");
+    $(".time-block").each(function () {
+      var timeDiv = $(this).attr("data-value");
 
       if (currentTime == timeDiv) {
         $(this).addClass("present");
@@ -37,20 +37,21 @@ $(function () {
     });
   };
 
-  // SAVE BUTTON
+
+  // SAVE BUTTON - SAVE USER INPUT
   $(".saveBtn").on("click", function (event) {
     event.preventDefault();
 
     // GET THE USER INPUT AND HOUR OF THE CHOSEN SAVE BUTTON USING THIS & JQUERY SIBLINGS
-    var userHourInput = $(this).siblings(".description").val();
-    console.log("User Input:", userHourInput)
-
+    var userPlans = $(this).siblings(".description").val();
     var selectedSaveTime = $(this).siblings(".hour").html();
-    console.log("Time:", selectedSaveTime)
+
+    // SET KEY TO SELECTED HOUR AND VALUE TO USER INPUT FOR CORRESPONDING HOUR
+    localStorage.setItem(selectedSaveTime, userPlans);
   });
 
 
   // CALL FUNCTIONS
-  displayDate();
-  currentTime();
+  displayCurrentDate();
+  getCurrentTime();
 });
