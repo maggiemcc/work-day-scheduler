@@ -1,15 +1,16 @@
 $(function () {
 
   // VARIABLES FOR GETTING HOUR DIVS
-  var hour9El = $("#hour-9");
-  var hour10El = $("#hour-10");
-  var hour11El = $("#hour-11");
-  var hour12El = $("#hour-12");
-  var hour13El = $("#hour-13");
-  var hour14El = $("#hour-14");
-  var hour15El = $("#hour-15");
-  var hour16El = $("#hour-16");
-  var hour17El = $("#hour-17");
+  // NEED THESE VARS?
+  // var hour9El = $("#hour-9");
+  // var hour10El = $("#hour-10");
+  // var hour11El = $("#hour-11");
+  // var hour12El = $("#hour-12");
+  // var hour13El = $("#hour-13");
+  // var hour14El = $("#hour-14");
+  // var hour15El = $("#hour-15");
+  // var hour16El = $("#hour-16");
+  // var hour17El = $("#hour-17");
 
 
   var theDate = $("#currentDay");
@@ -20,7 +21,7 @@ $(function () {
     theDate.text(currentDay);
   }
 
-  // APPLY PAST, PRESENT, or FUTURE CLASS TO TIME BLOCKS
+  // APPLY PAST, PRESENT, or FUTURE CLASS TO TIME BLOCKS BASED ON currentTime & timeDiv
   function getCurrentTime() {
     var currentTime = dayjs().hour();
 
