@@ -30,7 +30,7 @@ $(function () {
     event.preventDefault();
 
     // GET THE USER INPUT AND HOUR OF THE CHOSEN SAVE BUTTON USING THIS & JQUERY SIBLINGS
-    var userPlans = $(this).siblings(".description").val().trim();
+    var userPlans = $(this).siblings(".description").val().toUpperCase().trim();
     var selectedSaveTime = $(this).siblings(".hour").html();
     var textArea = $(this).siblings(".description").val();
 
