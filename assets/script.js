@@ -32,10 +32,9 @@ $(function () {
     // GET THE USER INPUT AND HOUR OF THE CHOSEN SAVE BUTTON USING THIS & JQUERY SIBLINGS
     var userPlans = $(this).siblings(".description").val().toUpperCase().trim();
     var selectedSaveTime = $(this).siblings(".hour").html();
-    var textArea = $(this).siblings(".description").val();
 
     // IF TEXTAREA IS NOT EMPTY DISPLAY ALERT THAT ITEM WAS ADDED TO PLANNER
-    if (textArea == ""){
+    if (userPlans == ""){
       return;
     } else {
       var alertUser = $(
