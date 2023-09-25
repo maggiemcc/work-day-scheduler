@@ -10,7 +10,7 @@ $(function () {
   function getCurrentTime() {
     var currentTime = dayjs().hour();
 
-    // ITERATE OVER .time-blocks USING JQUERY EACH
+    // ITERATE OVER DIV .time-blocks USING JQUERY EACH
     $(".time-block").each(function () {
       var timeDiv = $(this).attr("data-value");
 
@@ -34,7 +34,7 @@ $(function () {
     var selectedSaveTime = $(this).siblings(".hour").html();
     var textArea = $(this).siblings(".description").val();
 
-    // IF TEXTAREA IS NOT EMPTY DISPLAY ALERT THAT ITEM WAS ADDED
+    // IF TEXTAREA IS NOT EMPTY DISPLAY ALERT THAT ITEM WAS ADDED TO PLANNER
     if (textArea == ""){
       return;
     } else {
@@ -44,7 +44,7 @@ $(function () {
         </div>`
       );
 
-      // DISPLAY ALERT ONCE SAVED AND REMOVE AFTER SEVERAL SECONDS
+      // DISPLAY/APPEND ALERT ONCE SAVED AND REMOVE AFTER SEVERAL SECONDS
       $("#eventAdded").append(alertUser);
       setTimeout(function () {
         alertUser.remove();
@@ -57,7 +57,7 @@ $(function () {
 
   // DISPLAY STORED DATA
   function displaySchedule() {
-    // ITERATE OVER EACH .time-block USING JQUERY EACH TO GET STORED DATA
+    // ITERATE OVER EACH DIV .hour USING JQUERY EACH TO GET STORED DATA
     $(".hour").each(function () {
       var savedTime = $(this).html();
       var savedPlans = localStorage.getItem(savedTime);
